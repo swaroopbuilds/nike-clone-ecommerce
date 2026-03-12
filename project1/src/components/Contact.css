@@ -1,0 +1,103 @@
+.contact-container {
+  background-color: #f5f5f5;
+  padding-bottom: 60px;
+}
+
+/* Header */
+.contact-header {
+  text-align: center;
+  padding: 80px 20px 50px;
+}
+
+.contact-header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #555;
+  font-size: 18px;
+}
+
+/* Main Layout */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 10%;
+}
+
+/* Form Section */
+.contact-form-section {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.contact-form-section button {
+  padding: 12px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.contact-form-section button:hover {
+  background: black;
+}
+
+/* Success Message */
+.success-message {
+  text-align: center;
+}
+
+/* Info Section */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Banner */
+.contact-banner {
+  background: black;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+  padding: 60px 20px;
+}
+
+.contact-banner h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}

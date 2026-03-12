@@ -1,0 +1,55 @@
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+}
+
+.register-box {
+  width: 350px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background: #d11a2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-box button:hover {
+  background: #b01623;
+}
+
+.back-link {
+  margin-top: 15px;
+  color: #d11a2a;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

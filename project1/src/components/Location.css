@@ -1,0 +1,90 @@
+.location-container {
+  padding: 80px 10%;
+  background-color: #f5f5f5;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.location-title {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.location-subtitle {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.location-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.store-info {
+  flex: 1;
+  min-width: 350px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.store-info h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.store-description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.store-info p {
+  margin: 8px 0;
+}
+
+.store-info ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.highlight-text {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #111;
+}
+
+.visit-btn {
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.visit-btn:hover {
+  background-color: black;
+  transform: translateY(-2px);
+}
+
+.map-container {
+  flex: 1;
+  min-width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,42 @@
+.product-details {
+  text-align: center;
+  padding: 40px;
+}
+
+.product-image {
+  width: 350px;
+  height: 350px;
+  object-fit: contain; /* 👈 keeps image ratio */
+  margin-bottom: 20px;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.buy-btn {
+  background-color: black;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cart-btn {
+  background-color: red;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-btn:hover,
+.cart-btn:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --red: #D01C28;
+    --gray: #FFFFFF;  
+}
+
+* {
+    margin:0;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  margin:0;
+  
+}
+
+.header{
+    width:100%;
+    border-bottom:2px solid black;
+}
+
+button{
+    border: none;
+    padding: 6px 16px;
+    background: var(--red);
+    height:32px;
+    color:white;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 20px;
+    padding: 0 24px;
+
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    align-items:center;
+    padding: 0 40px;
+    
+    
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    color:black;
+}
+
+.hero h1{
+    font-weight: 800;
+    line-height: 102px;
+    font-size:108px;
+}
+
+.hero p{
+    font-weight: 600;
+    color: var(--red);
+}
+.hero-btn{
+    display: flex;
+    gap: 40px;
+
+}
+.hero-btn button{
+    font-size: 24px; 
+}
+
+.secondary-btn{
+    background: transaparent;
+    color: var(--gray);
+    border: 1px solid gray;
+}
+
+.Shopping p{
+    font-size: 14px;
+    margin-bottom: 8px;
+    color:black;
+
+}
+
+.brand-icons{
+    display:flex;
+    gap:16px;
+    
+}
+
+
+
+.availability {
+  margin-top: 20px;
+}
+
+.availability p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.brand-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.brand-icons img {
+  height: 30px;
+  width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-image img{
+    width:600px;
+}
+
+
+.main-content {
+  min-height: calc(100vh - 72px);
+}
+
+button {
+  border: none;
+  padding: 6px 16px;
+  background: var(--red);
+  height: 32px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
+/* Center the login section */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 72px); /* below navbar */
+}
+
+/* Login box */
+.login-box {
+  width: 320px;
+  padding: 24px;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+/* Icon */
+.login-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.login-box input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+/* Options row */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  
+}
+
+/* Register text */
+.register-text {
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.nav-login {
+  padding: 6px 16px;
+  height: 32px;
+  background: var(--red);
+  color: white;
+  white-space: nowrap;
+}
+
+/* NAVBAR LOGIN BUTTON */
+.nav-login {
+  padding: 6px 16px;
+  height: 32px;
+  background: var(--red);
+  color: white;
+  white-space: nowrap;
+}
+
+/* LOGIN PAGE BUTTON */
+.login-btn {
+  all: unset;
+  width: 100%;
+  padding: 10px;
+  background: var(--red);
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.back-btn {
+  margin-top: 12px;
+  background: transparent;
+  color: var(--red);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+.success-msg {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+.login-btn:disabled {
+  background: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.back-btn {
+  margin-top: 12px;
+  background: transparent;
+  color: var(--red);
+  cursor: pointer;
+}
+
+

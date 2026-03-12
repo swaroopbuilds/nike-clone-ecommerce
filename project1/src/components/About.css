@@ -1,0 +1,88 @@
+.about-container {
+  background-color: #f5f5f5;
+  padding-bottom: 60px;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Story Section */
+.about-section {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Cards Section */
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 0 20px 80px;
+}
+
+.about-card {
+  background: white;
+  padding: 40px 25px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Stats Section */
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.about-stats h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Banner */
+.about-banner {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-banner h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}

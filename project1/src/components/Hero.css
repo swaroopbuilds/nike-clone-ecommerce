@@ -1,0 +1,19 @@
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px;
+  z-index: 1; /* LOW z-index */
+}
+
+/* Hero image MUST NOT block clicks */
+.hero-image {
+  position: relative;
+  z-index: 1;
+  pointer-events: none; /* 🔥 THIS FIXES EVERYTHING */
+}
+
+.hero-image img {
+  width: 500px;
+}
