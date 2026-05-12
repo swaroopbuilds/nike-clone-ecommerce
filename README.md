@@ -9,6 +9,10 @@
 
 A modern full-stack Nike-inspired ecommerce web application built using React, Node.js, Express.js, and MongoDB with authentication, cart management, checkout flow, and responsive UI.
 
+## Live Demo
+
+https://nike-clone-ecommerce.vercel.app/
+
 ---
 
 # Features
