@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Login.css";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +13,6 @@ const Login = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 👇 get redirect path (checkout)
   const redirectPath = location.state?.from || "/products";
 
   const handleLogin = async () => {
@@ -22,31 +24,35 @@ const Login = ({ onLoginSuccess }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({
+          username,
+          password,
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        alert("Login successful ✅");
-
-        // ✅ IMPORTANT FIX
         localStorage.setItem("loggedIn", "true");
-        onLoginSuccess(); // 🔥 updates App.jsx state
 
-        // ✅ go back to checkout/payment
+        if (onLoginSuccess) {
+          onLoginSuccess();
+        }
+
+        alert("Login Successful ✅");
+
         navigate(redirectPath, { replace: true });
       } else {
-        alert(data.message || "Invalid credentials ❌");
+        alert(data.message || "Invalid Credentials ❌");
       }
     } catch (error) {
-      alert("Server not reachable ❌");
       console.error(error);
+      alert("Server not reachable ❌");
     }
 
     setLoading(false);
@@ -55,27 +61,41 @@ const Login = ({ onLoginSuccess }) => {
   return (
     <div className="login-wrapper">
       <div className="login-box">
-        <h2>Sign in</h2>
+        <img
+          src="/brand_logo.png"
+          alt="Nike"
+          className="login-logo"
+        />
+
+        <h2>Welcome Back</h2>
+
+        <p className="login-subtitle">
+          Login to continue shopping
+        </p>
 
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Enter Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <div className="login-options">
           <label>
-            <input type="checkbox" /> Remember me
+            <input type="checkbox" />
+            Remember me
           </label>
-          <span className="forgot">Forgot password?</span>
+
+          <span className="forgot">
+            Forgot Password?
+          </span>
         </div>
 
         <button
@@ -90,11 +110,15 @@ const Login = ({ onLoginSuccess }) => {
           className="register-text"
           onClick={() => navigate("/register")}
         >
-          Don’t have an account? Register now
+          Don’t have an account?
+          <span> Register</span>
         </p>
 
-        <button className="back-btn" onClick={() => navigate("/")}>
-          ← Back
+        <button
+          className="back-btn"
+          onClick={() => navigate("/")}
+        >
+          ← Back to Home
         </button>
       </div>
     </div>

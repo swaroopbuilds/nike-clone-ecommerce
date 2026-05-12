@@ -11,7 +11,15 @@ const Checkout = () => {
       <h2>Total Amount: ₹{totalPrice}</h2>
 
       <button
-        style={{ padding: "12px 20px", marginTop: "20px" }}
+        style={{
+          padding: "12px 20px",
+          marginTop: "20px",
+          background: "red",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          borderRadius: "6px",
+        }}
         onClick={() => navigate("/payment-success")}
       >
         Pay Now

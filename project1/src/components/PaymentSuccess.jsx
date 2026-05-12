@@ -13,7 +13,15 @@ const PaymentSuccess = () => {
       <p>Thank you for shopping with us!</p>
 
       <button
-        style={{ padding: "12px 20px", marginTop: "20px" }}
+        style={{
+          padding: "12px 20px",
+          marginTop: "20px",
+          background: "red",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          borderRadius: "6px",
+        }}
         onClick={handleContinueShopping}
       >
         Continue Shopping

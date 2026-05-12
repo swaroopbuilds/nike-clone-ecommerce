@@ -1,94 +1,151 @@
-import React from "react";
+import { useRef, useState } from "react";
 
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useState, useRef } from "react";
-
-import Navigation from "./components/Navigation";
-import HeroSection from "./components/Hero";
-import Category from "./components/Category";
-
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Products from "./components/Products";
-import ProductDetails from "./components/ProductDetails/ProductDetails";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
-import OrderSummary from "./components/OrderSummary";
-import PaymentSuccess from "./components/PaymentSuccess";
-
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Location from "./components/Location";
+import {
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 import "./App.css";
 
+import Navigation from "./components/Navigation";
+
+import HeroSection from "./components/Hero";
+import Category from "./components/Category";
+
+import Menu from "./components/Menu";
+
+import MenProducts from "./components/MenProducts";
+import WomenProducts from "./components/WomenProducts";
+
+import ProductDetails from "./components/ProductDetails/ProductDetails";
+
+import Cart from "./components/Cart";
+
+import Checkout from "./components/Checkout";
+
+import PaymentSuccess from "./components/PaymentSuccess";
+
+import Location from "./components/Location";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
+import Login from "./components/Login";
+import Register from "./components/Register";
+
 function App() {
+  const categoryRef = useRef(null);
+
+  const navigate = useNavigate();
+
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("loggedIn") === "true"
   );
 
-  const categoryRef = useRef(null);
+  const scrollToCategory = () => {
+    categoryRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
-    localStorage.setItem("loggedIn", "true");
-  };
-
-  const scrollToCategory = () => {
-    categoryRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="app">
-      <Navigation />
+    <>
+      <Navigation isLoggedIn={isLoggedIn} />
 
       <Routes>
+
+        {/* HOME */}
         <Route
           path="/"
           element={
             <>
-              <HeroSection onCategoryClick={scrollToCategory} />
+              <HeroSection
+                onCategoryClick={scrollToCategory}
+              />
+
               <Category refProp={categoryRef} />
             </>
           }
         />
 
-        {/* ✅ Existing Products Page */}
-        <Route path="/products" element={<Products />} />
-
-        {/* ✅ NEW Men & Women Routes */}
-        <Route path="/men" element={<Products category="men" />} />
-        <Route path="/women" element={<Products category="women" />} />
-
-        <Route path="/product" element={<ProductDetails />} />
+        {/* PRODUCTS */}
+        <Route
+          path="/products"
+          element={<Menu />}
+        />
 
         <Route
-          path="/login"
-          element={<Login onLoginSuccess={handleLoginSuccess} />}
+          path="/men"
+          element={<MenProducts />}
         />
-        <Route path="/register" element={<Register />} />
 
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/women"
+          element={<WomenProducts />}
+        />
 
+        {/* PRODUCT DETAILS */}
+        <Route
+          path="/product"
+          element={<ProductDetails />}
+        />
+
+        {/* CART */}
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
+        {/* CHECKOUT */}
         <Route
           path="/checkout"
+          element={<Checkout />}
+        />
+
+        {/* PAYMENT */}
+        <Route
+          path="/payment-success"
+          element={<PaymentSuccess />}
+        />
+
+        {/* OTHER */}
+        <Route
+          path="/location"
+          element={<Location />}
+        />
+
+        <Route
+          path="/about"
+          element={<About />}
+        />
+
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+
+        {/* LOGIN */}
+        <Route
+          path="/login"
           element={
-            isLoggedIn ? (
-              <Checkout />
-            ) : (
-              <Navigate to="/login" state={{ from: "/checkout" }} />
-            )
+            <Login
+              onLoginSuccess={handleLoginSuccess}
+            />
           }
         />
 
-        <Route path="/order-summary" element={<OrderSummary />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
+        {/* REGISTER */}
+        <Route
+          path="/register"
+          element={<Register />}
+        />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/location" element={<Location />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

@@ -1,64 +1,37 @@
 .products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding: 60px 50px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding-bottom: 60px;
 }
 
-/* 🔥 Fix link wrapping issue */
-.product-link {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-/* 🔥 Product Card */
 .product-card {
-  width: 260px;
-  height: 300px;
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
   text-align: center;
-  border-radius: 12px;
-  padding: 12px;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* 🔥 Hover Effect (now clearly visible) */
-.product-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
   cursor: pointer;
 }
 
-/* 🔥 Image */
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
 .product-card img {
-  width: 230px;
-  height: 180px;
+  width: 100%;
+  height: 240px;
   object-fit: contain;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
 }
 
-/* 🔥 Image zoom on hover (premium look) */
-.product-card:hover img {
-  transform: scale(1.08);
-}
-
-/* 🔥 Text */
 .product-card p {
-  margin: 4px 0;
+  margin-top: 10px;
   font-size: 18px;
-  color: black;
+  font-weight: 600;
+  color: #111;
 }
 
-/* 🔥 Price */
-.product-card p:last-child {
-  font-weight: bold;
+.product-link {
+  text-decoration: none;
 }

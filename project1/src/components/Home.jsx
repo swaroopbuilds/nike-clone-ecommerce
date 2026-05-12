@@ -1,4 +1,16 @@
 const Home = () => {
-  return <h1>Home Page</h1>;
+  return (
+    <div
+      style={{
+        paddingTop: "140px",
+        textAlign: "center",
+        fontSize: "40px",
+        fontWeight: "bold",
+      }}
+    >
+      Home Page
+    </div>
+  );
 };
+
 export default Home;
